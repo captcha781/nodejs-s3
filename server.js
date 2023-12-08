@@ -79,7 +79,7 @@ async function processDataFromS3(filepath, res) {
     });
   } catch (err) {
     console.log(err);
-    return true;
+    return res.status(500).json({ success: false, message: 'An unknown error occurred' });
   }
 }
 
